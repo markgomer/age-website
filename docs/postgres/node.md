@@ -2,7 +2,7 @@
 
 ## Overview
 
-Postgres has a default struct that it uses for throughout most of its query processing engine, <a href='https://github.com/postgres/postgres/blob/master/src/include/nodes/nodes.h#L105'>Node</a>. The Node struct is defined as follows:
+Postgres has a default struct that it uses for throughout most of its query processing engine, <a href='https://github.com/postgres/postgres/blob/a77d901714416f6bd4343c367585b060f385bbbc/src/include/nodes/nodes.h#L545'>Node</a>. The Node struct is defined as follows:
 
 ```c
 typedef struct Node
@@ -80,7 +80,8 @@ void myFunction(void *ptr)
 The above code will throw an error. However, you can cast the void pointer to the pointer of another type.
 
 ```c
-void myFunction(void *ptr){
+void myFunction(void *ptr)
+{
     myStruct *str = (myStruct *)ptr;
     str->var1 = 1;
 }
